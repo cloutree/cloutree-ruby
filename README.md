@@ -1,9 +1,5 @@
 # Cloutree
 
-TODO: Write a gem description
-
-## Installation
-
 Add this line to your application's Gemfile:
 
     gem 'cloutree'
@@ -18,7 +14,12 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    CC.configure(
+      app_key: YOUR_APP_KEY,
+      app_secret: YOUR_APP_SECRET
+    )
+    client = CC.instance
+    client.upload(filename)
 
 ## Contributing
 

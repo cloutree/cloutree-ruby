@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Cloutree::VERSION
   spec.authors       = ["Ivan Shamatov"]
   spec.email         = ["status.enable@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Gem to upload files to Cloutree CDN}
+  spec.description   = %q{}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -20,4 +20,6 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.5"
   spec.add_development_dependency "rake"
+  spec.add_development_dependency "minitest"
+  spec.add_dependency "httpi"
 end
