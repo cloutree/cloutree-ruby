@@ -1,5 +1,6 @@
 require 'digest/sha1'
 require 'singleton'
+require 'json'
 
 require_relative "cloutree/version"
 
@@ -41,8 +42,8 @@ module Cloutree
       command += "-H 'CHECKSUM: #{checksum}' "
       command += "-H 'FILENAME: #{filename}' "
       command += "-H 'TIMESTAMP: #{time}'"
-      @result = system(command)
-      @result
+      @result = JSON.parse(`#{command}`)
+      @result["success"]
     end 
 
     # def upload_old(file)
