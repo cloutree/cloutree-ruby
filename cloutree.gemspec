@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["status.enable@gmail.com"]
   spec.summary       = %q{Gem to upload files to Cloutree CDN}
   spec.description   = %q{}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/IvanShamatov/cloutree"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
