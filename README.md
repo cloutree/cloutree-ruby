@@ -1,4 +1,7 @@
 # Cloutree
+[![Build Status](https://travis-ci.org/IvanShamatov/cloutree.png?branch=master)](https://travis-ci.org/IvanShamatov/cloutree)
+
+Gem to upload files to Cloutr.ee CDN
 
 Add this line to your application's Gemfile:
 
