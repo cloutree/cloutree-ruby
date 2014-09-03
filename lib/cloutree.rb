@@ -42,13 +42,14 @@ module Cloutree
       string_to_sha = [app_key, time, filename, app_secret].join(":")
       checksum = Digest::SHA1.hexdigest(string_to_sha)
 
-      command = "curl 'https://cloutr.ee/upload' "
-      command += "--data-binary '@#{file}' "
-      command += "-H 'KEY: #{app_key}' "
-      command += "-H 'CHECKSUM: #{checksum}' "
-      command += "-H 'FILENAME: #{filename}' "
-      command += "-H 'TIMESTAMP: #{time}'"
-      @result = JSON.parse(`#{command}`)
+      c = Curl::Easy.new("https://cloutr.ee/upload")
+      c.ssl_verify_peer = false
+      c.headers["KEY"] = "#{app_key}"
+      c.headers["CHECKSUM"] = "#{checksum}"
+      c.headers["FILENAME"] = "#{filename}"
+      c.headers["TIMESTAMP"] = "#{time}"
+      c.http_post(File.read(file))
+      @result = JSON.parse(c.body_str)
       @result["success"]
     end 
 
