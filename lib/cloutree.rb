@@ -1,6 +1,7 @@
 require 'digest/sha1'
 require 'singleton'
 require 'json'
+require 'curb'
 
 require_relative "cloutree/version"
 
