@@ -51,10 +51,10 @@ module Cloutree
       # c.headers["TIMESTAMP"] = "#{time}"
       # c.http_post(File.read(file))
       command = "curl 'https://cloutr.ee/upload' "
-      command += "--data-binary '@#{file}'"
+      command += "--data-binary '@#{file}' "
       command += "-H 'KEY: #{app_key}' "
-      command += "-H 'CHECKSUM: #{checksum}'"
-      command += "-H 'FILENAME: #{filename}'"
+      command += "-H 'CHECKSUM: #{checksum}' "
+      command += "-H 'FILENAME: #{filename}' "
       command += "-H 'TIMESTAMP: #{time}'"
       res = `command`
       @result = JSON.parse(res)
