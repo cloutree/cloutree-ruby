@@ -53,9 +53,9 @@ module Cloutree
       command = "curl 'https://cloutr.ee/upload' "
       command += "--data-binary '@#{file}'"
       command += "-H 'KEY: #{app_key}' "
-      command += "-H 'CHECKSUM: #{}'"
-      command += "-H 'FILENAME: #{}'"
-      command += "-H 'TIMESTAMP: #{}'"
+      command += "-H 'CHECKSUM: #{checksum}'"
+      command += "-H 'FILENAME: #{filename}'"
+      command += "-H 'TIMESTAMP: #{time}'"
       res = `command`
       @result = JSON.parse(res)
       @result["success"]
