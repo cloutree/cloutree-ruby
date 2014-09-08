@@ -56,7 +56,8 @@ module Cloutree
       command += "-H 'CHECKSUM: #{checksum}' "
       command += "-H 'FILENAME: #{filename}' "
       command += "-H 'TIMESTAMP: #{time}'"
-      res = `command`
+      puts command
+      res = %x(#{command})
       @result = JSON.parse(res)
       @result["success"]
     end 
